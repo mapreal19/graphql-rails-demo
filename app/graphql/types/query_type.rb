@@ -3,6 +3,8 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
+    field :users, [Types::UserType], null: true
+
     field :user, Types::UserType, null: false do
       argument :id, ID, required: true
     end
@@ -11,6 +13,10 @@ module Types
 
     field :movie, Types::MovieType, null: false, description: "Returns a movie" do
       argument :id, ID, required: true
+    end
+
+    def users
+      User.all
     end
 
     def user(id:)

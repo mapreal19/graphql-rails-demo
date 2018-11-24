@@ -1,7 +1,7 @@
 User.destroy_all
 Movie.destroy_all
 
-user = User.create(name: "Mario")
+user = User.create(name: "Mario", email: "mario@mail.com", password: "password")
 
 Movie.create(
   title: 'Deadly Weapon',
