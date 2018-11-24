@@ -24,6 +24,8 @@ module Types
     end
 
     def all_movies
+      return nil unless context[:current_user]
+
       Movie.all
     end
 

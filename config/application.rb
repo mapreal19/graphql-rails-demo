@@ -29,7 +29,5 @@ module GraphqlRailsDemo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.autoload_paths.push(*%W[#{config.root}/app/graphql/types/])
   end
 end

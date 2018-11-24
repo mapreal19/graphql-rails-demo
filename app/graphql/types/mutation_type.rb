@@ -26,7 +26,13 @@ module Types
 
       secret = Rails.application.credentials.secret_key_base.byteslice(0..31)
       crypt = ActiveSupport::MessageEncryptor.new(secret)
+
+      # INFO: This is pretty straightforward since the generated token is so simple.
+      # Like was said before, make sure to check out a different token method out
+      # there when building a real-world application though, such as JWT.
       token = crypt.encrypt_and_sign("user-id:#{user.id}")
+
+      context[:session][:token] = token
 
       OpenStruct.new(user: user, token: token)
     end
