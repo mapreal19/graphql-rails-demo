@@ -9,7 +9,7 @@ module Types
       argument :id, ID, required: true
     end
 
-    field :allMovies, [Types::MovieType], null: true, description: "List of movies"
+    field :movies, [Types::MovieType], null: true, description: "List of movies"
 
     field :movie, Types::MovieType, null: false, description: "Returns a movie" do
       argument :id, ID, required: true
@@ -23,9 +23,8 @@ module Types
       User.find(id)
     end
 
-    def all_movies
-      return nil unless context[:current_user]
-
+    def movies
+      # return nil unless context[:current_user]
       Movie.all
     end
 
