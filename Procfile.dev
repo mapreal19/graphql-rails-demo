@@ -1,0 +1,2 @@
+backend: rails server
+frontend: cd client && PORT=5001 yarn start

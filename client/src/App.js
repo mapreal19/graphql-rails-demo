@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import './App.css';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3000/graphql'
+  uri: 'http://localhost:5000/graphql'
 });
 
 

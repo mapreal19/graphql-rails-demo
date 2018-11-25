@@ -8,6 +8,8 @@ Rails.application.configure do
 
   config.eager_load = true # TODO: eager load only graphql folder
 
+  config.action_controller.allow_forgery_protection = false
+
   # Show full error reports.
   config.consider_all_requests_local = true
 
